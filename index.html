@@ -1,0 +1,61 @@
+<html></html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+            <h2>Freetuts.net hướng dẫn tạo hiệu ứng Animation</h2>
+            <button id="btn" onclick="myMove()">Xem kết quả</button>
+        <div id ="myContainer">
+            <div id ="myAnimation"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+            function myMove() {
+            var btn = document.getElementById("btn");
+            btn.style.display = "none";
+            var elem = document.getElementById("myAnimation");
+            var pos = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+            if (pos == 350) {
+            clearInterval(id);
+            } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+            }
+            }
+            }
+        </script>
+    <style>
+                    .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            }
+            #myContainer {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            position: relative;
+            background: #222222;
+            }
+            #myAnimation {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: #FF0000;
+            }
+            #btn {
+            width: 150px;
+            height: 40px;
+            margin: 20px;
+            }
+    </style>
+</body>
+</html>
